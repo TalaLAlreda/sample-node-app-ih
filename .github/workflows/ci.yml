@@ -40,10 +40,11 @@ jobs:
        uses: dorny/test-reporter@v1
        if: always()
        with:
-         name: Jest Test Results
-         path: coverage/junit.xml
-         reporter: jest-junit
-         fail-on-error: true
+        name: Jest Test Results
+        path: '**/junit.xml'     # was coverage/junit.xml
+        reporter: jest-junit
+        fail-on-error: true
+
 
      - name: Upload test results to GitHub
        uses: actions/upload-artifact@v4
